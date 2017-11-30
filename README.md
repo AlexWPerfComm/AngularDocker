@@ -13,7 +13,7 @@ If you wish to build it manually, just navigate to the Dockerfile and run:
 
 The included file `run.sh` should run it if you used the build script as well.
 
-If you built it manually, you run it with the command: (It's port 3000 currently)
+If you built it manually, you run it with the command: (It's port 3000 currently)  
 ```docker run -p <host port>:<container port> <name> npm start```
 
 #### Etc
