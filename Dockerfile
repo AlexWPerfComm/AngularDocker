@@ -14,6 +14,7 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get install -y nodejs
 
 WORKDIR /opt
-RUN git clone https://github.com/angular/quickstart.git quickstart
-WORKDIR /opt/quickstart
-RUN npm install
+RUN git clone https://github.com/angular/angular-cli
+RUN npm install -g @angular/cli
+RUN ng new sample
+WORKDIR /opt/sample
