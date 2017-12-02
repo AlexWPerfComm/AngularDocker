@@ -16,5 +16,6 @@ RUN apt-get install -y nodejs
 WORKDIR /opt
 RUN git clone https://github.com/angular/angular-cli
 RUN npm install --unsafe-perm -g @angular/cli
-RUN ng new sample
-WORKDIR /opt/sample
+
+RUN git clone https://github.com/AlexWPerfComm/AngularServer.git
+WORKDIR /opt/AngularServer
