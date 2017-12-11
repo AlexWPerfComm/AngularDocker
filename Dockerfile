@@ -2,20 +2,11 @@ FROM ubuntu
 
 MAINTAINER Alex woodhouse <alexander.woodhouse@perfect.com>
 
-RUN apt-get update
+COPY dockerGo.sh /opt
 
-RUN apt-get -y install python-software-properties
-RUN apt-get -y install software-properties-common
-RUN apt-get -y install openjdk-8-jdk
-RUN apt-get -y install maven
-RUN apt-get -y install git
-RUN apt-get -y install curl
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get update; apt-get -y install python-software-properties software-properties-common openjdk-8-jdk maven git curl;curl -sL https://deb.nodesource.com/setup_9.x | bash -;apt-get install -y nodejs
 
 WORKDIR /opt
-RUN git clone https://github.com/angular/angular-cli
-RUN npm install --unsafe-perm -g @angular/cli
+RUN git clone https://github.com/angular/angular-cli;npm install --unsafe-perm -g @angular/cli
 
-RUN git clone https://github.com/AlexWPerfComm/AngularServer.git
-WORKDIR /opt/AngularServer
+WORKDIR /opt/mount/AngularServer
